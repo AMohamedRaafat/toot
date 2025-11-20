@@ -135,32 +135,94 @@ $(function () {
 
   console.log('🚗 TooT Driver app initialized successfully!');
 
-  // Owl Carousel for Reviews Section - Use same config as working customer version
-  $('.reviews-carousel').owlCarousel({
-    loop: true,
-    margin: 20,
-    nav: false, // Hide navigation arrows
-    dots: false, // Hide dots (like customer version)
-    rtl: true, // RTL support for Arabic
-    responsive: {
-      0: {
-        items: 1,
-        center: true,
+  // Initialize Owl Carousel for reviews - FIXED VERSION
+  $(document).ready(function () {
+    console.log("🔄 Initializing Owl Carousel...");
+
+    // Destroy existing carousel if any
+    if ($('.reviews-carousel').hasClass('owl-loaded')) {
+      $('.reviews-carousel').owlCarousel('destroy');
+      console.log("🗑️ Destroyed existing carousel");
+    }
+
+    // Initialize fresh carousel with FIXED settings
+    $('.reviews-carousel').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: false,
+      rtl: true,
+      items: 3, // Default to 3 items
+      responsive: {
+        0: { items: 1, center: true, },
+        640: { items: 2, center: true, },
+        1025: { items: 3, center: true, }
       },
-      640: {
-        items: 2,
-        center: false,
-        stagePadding: 0
+      center: false,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true,
+      smartSpeed: 800,
+      mouseDrag: true,
+      touchDrag: true,
+      pullDrag: true,
+      freeDrag: true,
+      slideBy: 1,
+      rewind: true,
+      rewindSpeed: 800,
+      onInitialized: function () {
+        console.log("✅ Owl Carousel initialized successfully!");
+
+        // Force proper row layout after initialization
+        setTimeout(function () {
+          // Force the stage to be a flex container
+          $('.reviews-carousel .owl-stage').css({
+            'display': 'flex !important',
+            'flex-direction': 'row !important',
+            'flex-wrap': 'nowrap !important',
+            'width': '100% !important'
+          });
+
+          // Force each item to be flex items in a row
+          $('.reviews-carousel .owl-item').css({
+            'display': 'flex !important',
+            'flex': '0 0 auto !important',
+            'flex-direction': 'column !important',
+            'opacity': '1',
+            'visibility': 'visible',
+            'width': 'auto !important'
+          });
+
+          // Force items to display inline
+          $('.reviews-carousel .item').css({
+            'display': 'block !important',
+            'width': '100% !important'
+          });
+
+          console.log("🔧 Forced row layout applied!");
+        }, 100);
+
+
+        // Force correct number of items based on screen size
+        const screenWidth = $(window).width();
+        if (screenWidth > 1024) {
+          this.options.items = 3;
+        } else if (screenWidth > 640) {
+          this.options.items = 2;
+        } else {
+          this.options.items = 1;
+        }
+
+        // Refresh to apply changes
+        this.refresh();
       },
-      1024: {
-        items: 3.5,
-        center: true,
+    });
+
+    // Handle window resize to ensure proper responsive behavior
+    $(window).on('resize', function () {
+      if ($('.reviews-carousel').hasClass('owl-loaded')) {
+        $('.reviews-carousel').owlCarousel('refresh');
       }
-    },
-    center: true,
-    autoplay: true,
-    autoplayTimeout: 4000,
-    autoplayHoverPause: true,
-    smartSpeed: 800
+    });
   });
 });

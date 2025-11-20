@@ -131,7 +131,7 @@ body.drawer-open {
 
 .reviews-carousel .quote {
   height: 100%;
-  margin: 0 auto;
+  width: 100% !important;
 }
 
 /* RTL fix for Owl Carousel */
@@ -148,7 +148,6 @@ body.drawer-open {
   position: relative !important;
   display: block !important;
   width: 100% !important;
-  min-height: 350px !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
@@ -264,32 +263,101 @@ section[data-aos] .reviews-carousel {
 
 /* Remove debug styles - carousel should work now */
 
-/* Fix owl-carousel visibility issues */
-.reviews-carousel {
-  overflow: visible !important;
-  direction: ltr !important;
+/* Ultimate fix - ensure carousel displays as row */
+.reviews-carousel.owl-carousel {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
 }
 
-.reviews-carousel .owl-stage-outer {
-  overflow: visible !important;
+.reviews-carousel.owl-carousel .owl-stage-outer {
+  overflow: hidden !important;
+  position: relative !important;
+  width: 100% !important;
 }
 
+.reviews-carousel.owl-carousel .owl-stage {
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative !important;
+  width: 100% !important;
+  transform: translate3d(0, 0, 0) !important;
+  -ms-touch-action: pan-Y !important;
+  touch-action: pan-Y !important;
+}
+
+.reviews-carousel.owl-carousel .owl-item {
+  position: relative !important;
+  min-height: 1px !important;
+  float: left !important;
+  display: block !important;
+  -webkit-backface-visibility: hidden !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Critical fix: Force items to display horizontally */
 .reviews-carousel .owl-stage {
   display: flex !important;
-  direction: ltr !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
 }
 
 .reviews-carousel .owl-item {
-  float: none !important;
   display: flex !important;
-  align-items: stretch !important;
-  direction: rtl !important;
+  flex: 0 0 auto !important;
+  flex-direction: column !important;
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+/* Emergency fix: Prevent column stacking */
+.reviews-carousel * {
+  box-sizing: border-box !important;
+}
+
+.reviews-carousel .owl-stage-outer {
+  overflow: hidden !important;
+}
+
+/* Force horizontal layout with important flags */
+.reviews-carousel .owl-stage {
+  display: flex !important;
+  flex-direction: row !important;
+  white-space: nowrap !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.reviews-carousel .owl-item {
+  display: inline-flex !important;
+  white-space: normal !important;
+  vertical-align: top !important;
+}
+
+/* Pre-init fix: Ensure items are horizontal before carousel initializes */
+.reviews-carousel:not(.owl-loaded) .item {
+  display: inline-block !important;
+  width: 33.333% !important;
+  vertical-align: top !important;
+  padding: 0 10px !important;
+}
+
+.reviews-carousel:not(.owl-loaded) {
+  font-size: 0 !important; /* Remove white space between inline items */
+}
+
+.reviews-carousel:not(.owl-loaded) .item > * {
+  font-size: 16px !important; /* Restore font size inside items */
 }
 
 .reviews-carousel .quote {
   direction: rtl !important;
   width: 100% !important;
-  min-height: 280px !important;
 }
 
 /* Ensure carousel items are visible */
@@ -404,20 +472,8 @@ section[data-aos] .reviews-carousel {
   position: relative;
 }
 
-.quote::before {
-  content: '"';
-  position: absolute;
-  top: -0.5rem;
-  right: 1.5rem;
-  font-size: 3rem;
-  color: var(--emerald-300);
-  font-weight: bold;
-}
-
 .quote p {
   color: #374151;
-  font-style: italic;
-  margin-bottom: 1rem;
 }
 
 .quote .author {
@@ -567,7 +623,6 @@ button:focus {
 
 .reviews-carousel .quote {
   height: 100%;
-  width: 350px !important;
 }
 
 /* Hide navigation arrows */
@@ -592,11 +647,7 @@ button:focus {
 .gradient-bg {
   background: linear-gradient(180deg, #000000 0%, #393657 100%) !important;
 }
-@media (max-width: 767px) {
-  .reviews-carousel .quote {
-    width: 100% !important;
-  }
-}
+
 /* Responsive tweaks */
 @media (max-width: 767px) {
   .quote {
@@ -677,4 +728,38 @@ button:focus {
   .reviews-carousel .quote {
     max-width: 340px;
   }
+}
+
+/* Mobile: 1 item */
+@media (max-width: 640px) {
+  .reviews-carousel .owl-item {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Tablet: 2 items */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .reviews-carousel .owl-item {
+    width: calc(50% - 10px) !important;
+    margin-right: 20px !important;
+  }
+}
+
+/* Desktop: 3 items */
+@media (min-width: 1025px) {
+  .reviews-carousel .owl-item {
+    width: calc(33.333% - 14px) !important;
+    margin-right: 20px !important;
+  }
+}
+
+/* Remove margins for RTL layout */
+.reviews-carousel .owl-item {
+  margin-left: 0 !important;
+  margin-right: 20px !important;
+}
+
+.reviews-carousel .owl-item:last-child {
+  margin-right: 0 !important;
 }
