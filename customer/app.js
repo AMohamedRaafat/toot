@@ -35,30 +35,30 @@ $(function () {
     const $items = $container.find('.faq-item');
     const totalItems = $items.length;
     const itemsPerColumn = Math.ceil(totalItems / 2);
-    
+
     // Clear existing columns
     $container.find('.faq-column').remove();
-    
+
     // Create two columns
     const $leftColumn = $('<div class="faq-column flex-1 space-y-4"></div>');
     const $rightColumn = $('<div class="faq-column flex-1 space-y-4"></div>');
-    
+
     // Distribute items
-    $items.each(function(index) {
+    $items.each(function (index) {
       if (index < itemsPerColumn) {
         $leftColumn.append($(this));
       } else {
         $rightColumn.append($(this));
       }
     });
-    
+
     // Add columns to container
     $container.append($leftColumn, $rightColumn);
   }
-  
+
   // Initial distribution
   distributeFAQItems();
-  
+
   // Initialize AOS (Animate On Scroll) - restore original functionality
   AOS.init({
     duration: 800,
@@ -80,7 +80,7 @@ $(function () {
 
     // Toggle current item
     $toggle.toggleClass('active');
-    
+
     // Dynamic icon toggle - check current state and flip it
     if ($icon.hasClass('fa-plus')) {
       $icon.removeClass('fa-plus').addClass('fa-minus');
@@ -101,18 +101,6 @@ $(function () {
     }
   });
 
-  // Header scroll effect
-  let lastScroll = 0;
-  $(window).on('scroll', function () {
-    const currentScroll = $(this).scrollTop();
-    const $header = $('header');
-    if (currentScroll > 100) {
-      $header.addClass('shadow-md');
-    } else {
-      $header.removeClass('shadow-md');
-    }
-    lastScroll = currentScroll;
-  });
 
   // Mobile Drawer Menu
   const $drawer = $('#mobile-drawer');
