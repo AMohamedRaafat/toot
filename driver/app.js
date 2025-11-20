@@ -135,16 +135,27 @@ $(function () {
 
   console.log('🚗 TooT Driver app initialized successfully!');
 
+  // Owl Carousel for Reviews Section - Use same config as working customer version
   $('.reviews-carousel').owlCarousel({
     loop: true,
     margin: 20,
-    nav: false,
-    dots: false,
-    rtl: true,
+    nav: false, // Hide navigation arrows
+    dots: false, // Hide dots (like customer version)
+    rtl: true, // RTL support for Arabic
     responsive: {
-      0: { items: 1, center: true },
-      640: { items: 2, center: false, stagePadding: 0 },
-      1024: { items: 3, center: true }
+      0: {
+        items: 1,
+        center: true,
+      },
+      640: {
+        items: 2,
+        center: false,
+        stagePadding: 0
+      },
+      1024: {
+        items: 3.5,
+        center: true,
+      }
     },
     center: true,
     autoplay: true,
