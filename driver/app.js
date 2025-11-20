@@ -134,4 +134,22 @@ $(function () {
   });
 
   console.log('🚗 TooT Driver app initialized successfully!');
+
+  $('.reviews-carousel').owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: false,
+    dots: false,
+    rtl: true,
+    responsive: {
+      0: { items: 1, center: true },
+      640: { items: 2, center: false, stagePadding: 0 },
+      1024: { items: 3, center: true }
+    },
+    center: true,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplayHoverPause: true,
+    smartSpeed: 800
+  });
 });
