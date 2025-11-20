@@ -38,8 +38,7 @@ $(document).ready(function () {
         backdrop.addEventListener('click', closeMobileMenu);
     }
 
-    // Close mobile menu when clicking on links
-    const mobileLinks = mobileMenu.querySelectorAll('a');
+    const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
     mobileLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
     });
