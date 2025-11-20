@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TooT | رحلتك، سعرك — اختر تعريفتك بكل سهولة</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body class="bg-white text-slate-900 font-['IBM_Plex_Sans_Arabic']">
+    <!-- Header -->
+    <header class="z-50 bg-white">
+      <div
+        class="max-w-5xl mx-auto px-4 py-3 md:border md:border-[#E7E9EF] md:rounded-full md:bg-[#F6F7F9] flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <img src="assets/imgs/logo.svg" alt="TooT" class="h-10 w-auto" />
+        </div>
+        <!-- Mobile menu button (left side for RTL) -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden p-2 text-slate-600 hover:text-slate-900"
+        >
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+
+        <!-- Brand (right side for RTL) -->
+
+        <!-- Nav (left side for RTL) -->
+        <nav
+          class="hidden md:flex items-center gap-6 bg-[#F6F7F9] rounded-full px-6 py-1"
+        >
+          <a
+            href="#"
+            class="px-4 py-2 text-xs font-semibold text-slate-900 bg-[#E7E9EF] rounded-full relative"
+          >
+            الرئيسية
+            <span
+              class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-0.5 bg-purple-600 rounded-full"
+            ></span>
+          </a>
+          <a
+            href="#cta"
+            class="px-3 py-1 text-xs text-slate-600 hover:text-slate-900"
+            >حمل التطبيق</a
+          >
+          <a
+            href="#"
+            class="px-3 py-1 text-xs text-slate-600 hover:text-slate-900"
+            >من نحن</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div
+      id="mobile-drawer"
+      class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out"
+    >
+      <!-- Backdrop with proper z-index -->
+      <div
+        id="drawer-backdrop"
+        class="fixed inset-0 bg-black bg-opacity-50 z-40"
+      ></div>
+
+      <!-- Drawer Content -->
+      <div class="fixed right-0 top-0 h-full w-full bg-white shadow-xl z-50">
+        <!-- Drawer Header -->
+        <div
+          class="flex items-center justify-between p-4 border-b border-slate-200"
+        >
+          <!-- TooT Logo -->
+          <div class="flex items-center">
+            <img src="assets/imgs/logo.svg" alt="TooT" class="h-10 w-auto" />
+          </div>
+          <!-- Close Button -->
+          <button
+            id="close-drawer"
+            class="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg"
+          >
+            <i class="fa-solid fa-xmark text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Drawer Menu -->
+        <nav class="p-4 space-y-1">
+          <a
+            href="#"
+            class="block px-4 py-3 text-slate-900 font-semibold text-sm"
+            >الرئيسية</a
+          >
+          <a
+            href="#cta"
+            class="block px-4 py-3 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm"
+            >حمل التطبيق</a
+          >
+          <a
+            href="#"
+            class="block px-4 py-3 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg text-sm"
+            >من نحن</a
+          >
+        </nav>
+
+        <!-- Drawer Footer -->
+        <div
+          class="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-200 bg-white"
+        >
+          <!-- Store Buttons in One Row -->
+          <div class="flex gap-3 mb-6">
+            <a
+              href="#"
+              class="flex-1 flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+            >
+              <img
+                src="./assets/imgs/icons/play.svg"
+                alt="Play"
+                class="h-8 w-8"
+              />
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >Google Play</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="flex-1 flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+            >
+              <img
+                src="./assets/imgs/icons/apple.svg"
+                alt="Apple"
+                class="h-8 w-8"
+              />
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >App Store</span
+                >
+              </div>
+            </a>
+          </div>
+
+          <!-- Copyright -->
+          <div class="text-center text-sm text-slate-500">
+            TooT – جميع الحقوق محفوظة 2025 ©
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="relative bg-white text-slate-900" data-aos="fade-up">
+      <!-- Background Image and Pattern -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="assets/imgs/header/main-streets.png"
+          alt="Main Streets"
+          class="w-[80%] h-full mx-auto"
+        />
+      </div>
+
+      <div
+        class="relative z-10 max-w-5xl mx-auto px-4 md:py-24 py-12 text-center"
+      >
+        <div
+          data-reveal
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="opacity-0 translate-y-6 transition-all duration-700 ease-out"
+        >
+          <!-- Hero badges -->
+          <div
+            class="flex flex-wrap gap-3 mb-6 justify-center"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F6F7F9] text-[#737373] text-sm border border-[#E1E4EB]"
+            >
+              <img
+                src="./assets/imgs/icons/star.svg"
+                alt="Star"
+                class="h-5 w-5"
+              />
+              <span class="font-semibold"
+                ><span class="text-black">5/5</span> تقييم العملاء</span
+              >
+              <span class="font-semibold"
+                ><span class="text-black">+250</span> رحلة مكتملة</span
+              >
+            </div>
+          </div>
+          <!-- Headline -->
+          <h1
+            class="text-4xl md:text-6xl font-bold leading-tight"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            رحلتك، سعرك — اختر<br />
+            تعريفتك <span class="text-[#6927DA]">بكل سهولة</span>
+          </h1>
+          <!-- Subtext -->
+          <p
+            class="mt-6 text-lg md:text-xl/relaxed text-[#666] font-medium max-w-3xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            تطبيق ذكي لطلب المشاوير يتيح لك تحديد أجرة رحلتك والتفاوض مع
+            السائقين لتستمتع برحلات سريعة آمنة، ومريحة في أي وقت ومن أي مكان.
+          </p>
+          <!-- Store buttons -->
+          <div
+            class="mt-6 flex flex-wrap gap-3 justify-center"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+          >
+            <a
+              href="#"
+              class="inline-flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+            >
+              <img
+                src="./assets/imgs/icons/play.svg"
+                alt="Play"
+                class="h-8 w-8"
+              />
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >Google Play</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+            >
+              <img
+                src="./assets/imgs/icons/apple.svg"
+                alt="Apple"
+                class="h-8 w-8"
+              />
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >App Store</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two-column grid section (order preserved exactly as design) -->
+    <section class="max-w-7xl mx-auto px-4 pb-20" data-aos="fade-up">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="order-2 md:order-1 space-y-5">
+          <div
+            data-reveal
+            data-aos="fade-right"
+            data-aos-delay="200"
+            class="bg-[#F9FAFB] border border-[#E7E9EF] p-4 rounded-2xl"
+          >
+            <div class="p-4 pb-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                تفاعل حي مع السائقين
+              </h3>
+              <p class="text-slate-600 mb-6">
+                يعرض لك التطبيق عدد السائقين الذين يشاهدون طلبك ومستعدون لتقديم
+                عروضهم.
+              </p>
+            </div>
+            <div
+              class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 pb-0"
+            >
+              <img
+                src="./assets/imgs/features/live-react-with-driver.png"
+                alt="Live React with Driver"
+                class="w-auto h-auto mx-auto rounded-2xl"
+              />
+            </div>
+          </div>
+          <div
+            data-reveal
+            data-aos="fade-right"
+            data-aos-delay="400"
+            class="bg-[#F9FAFB] border border-[#E7E9EF] p-4 rounded-2xl"
+          >
+            <div class="p-4 pb-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                تحكّم كامل في رحلتك
+              </h3>
+              <p class="text-slate-600 mb-6">
+                يمكنك تعديل تفاصيل الرحلة، تعديل موقع الانطلاق، إضافة ملاحظات،
+                وإدارة رحلتك في أي وقت.
+              </p>
+            </div>
+            <div
+              class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 pb-0"
+            >
+              <img
+                src="./assets/imgs/features/control-trip.png"
+                alt="Live React with Driver"
+                class="w-auto h-auto mx-auto rounded-2xl"
+              />
+            </div>
+          </div>
+          <div
+            data-reveal
+            class="bg-[#F9FAFB] border border-[#E7E9EF] p-4 rounded-2xl"
+          >
+            <div class="p-4 pb-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                مزايـدة العروض الفورية
+              </h3>
+              <p class="text-slate-600 mb-6">
+                استقبل عروضًا متعددة من السائقين القريبين، واختر العرض الأنسب
+                لميزانيتك ووقتك بضغطة زر.
+              </p>
+            </div>
+            <div
+              class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 pb-0"
+            >
+              <img
+                src="./assets/imgs/features/offers.png"
+                alt="Live React with Driver"
+                class="w-auto h-auto mx-auto rounded-2xl"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2 space-y-3" data-aos="fade-left">
+          <!-- Top-left card -->
+
+          <div
+            data-reveal
+            data-aos="fade-left"
+            data-aos-delay="200"
+            class="bg-[#F9FAFB] border border-[#E7E9EF] p-4 rounded-2xl"
+          >
+            <div class="p-4 pb-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                اتصال مباشر بين السائق والراكب
+                <!-- Top-right card -->
+              </h3>
+              <p class="text-slate-600 mb-6">
+                رحلات عادية تتم مباشرة بينك وبين السائق، بدون وسيط.
+              </p>
+            </div>
+            <div
+              class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 pb-0"
+            >
+              <!-- Phone mockup -->
+              <img
+                src="./assets/imgs/features/phone.png"
+                alt="Live React with Driver"
+                class="w-auto h-auto hidden md:block mx-auto rounded-2xl"
+              />
+              <!-- Phone Small Screen mockup -->
+              <img
+                src="./assets/imgs/features/phone-sm.png"
+                alt="Live React with Driver"
+                class="w-auto h-auto block md:hidden mx-auto rounded-2xl"
+              />
+            </div>
+          </div>
+
+          <!-- Middle-right card -->
+
+          <!-- Bottom-left card -->
+          <div
+            data-reveal
+            data-aos="fade-left"
+            data-aos-delay="400"
+            class="bg-[#F9FAFB] border border-[#E7E9EF] p-4 rounded-2xl"
+          >
+            <div class="p-4 pb-1">
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                السلامة والشفافية التي تستحقها
+              </h3>
+              <p class="text-slate-600 mb-6">
+                اطّلع على تقييمات السائقين والرحلات السابقة، واختر السائق قبل
+                انطلاق مشوارك. سلامتك وثقتك دائمًا في المقام الأول.
+              </p>
+            </div>
+            <div
+              class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 pb-0"
+            >
+              <div class="bg-white rounded-2xl p-3 pb-0 text-white">
+                <!-- Vehicle tile -->
+
+                <img
+                  src="./assets/imgs/features/safe.png"
+                  alt="Live React with Driver"
+                  class="w-auto h-auto mx-auto rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom-right card -->
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="bg-slate-50" data-aos="fade-up">
+      <div class="max-w-7xl mx-auto px-4 py-20">
+        <div class="text-center mb-12">
+          <!-- Badge -->
+          <div class="text-center mb-12" data-aos="fade-up">
+            <span
+              class="bg-gray-900 text-white px-4 py-2 rounded-full gradient-bg text-sm font-medium inline-flex items-center gap-1"
+            >
+              <img src="./assets/imgs/icons/trophy.svg" />
+              شهادة مستخدم
+            </span>
+          </div>
+          <h2
+            class="mt-2 text-3xl md:text-4xl font-bold text-[#0d0d0d]"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            قصص حقيقية من ركّابنا وسائقينا
+          </h2>
+          <p
+            class="mt-4 text-[#666] text-lg"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            ما الذي يحبه الناس في Toot؟
+          </p>
+        </div>
+
+        <!-- Owl Carousel -->
+        <div
+          class="owl-carousel owl-theme reviews-carousel"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <div
+            class="quote bg-[#F9FAFB] p-3 rounded-xl border border-gray-200 shadow-sm relative"
+          >
+            <!-- Quote icon -->
+            <div class="absolute top-5 left-6 text-gray-200">
+              <img
+                src="assets/imgs/icons/qoute.svg"
+                alt="quote"
+                class="w-6 h-6 opacity-70"
+              />
+            </div>
+            <!-- Header with name, role and avatar -->
+            <div class="flex items-center justify-start mb-4">
+              <div
+                class="w-[50px] h-[50px] rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-semibold text-sm"
+              >
+                <img src="./assets/imgs/avatar.png" alt="avatar" />
+              </div>
+              <div class="text-start mr-3">
+                <h4 class="font-semibold text-[#0d0d0d] text-base">مجد علي</h4>
+                <p class="">سائق شريك</p>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="border-t border-gray-100 mb-4"></div>
+            <!-- Content -->
+            <p class="text-gray-700 text-start leading-relaxed text-sm">
+              يمنحني Toot حرية حقيقية في القيادة. أختار الرحلات التي تناسبني،
+              ونظام التفاوض يجعل كل رحلة عادلة للطرفين.
+            </p>
+          </div>
+
+          <div
+            class="quote bg-[#F9FAFB] p-3 rounded-xl border border-gray-200 shadow-sm relative"
+          >
+            <!-- Quote icon -->
+            <div class="absolute top-5 left-6 text-gray-200">
+              <img
+                src="assets/imgs/icons/qoute.svg"
+                alt="quote"
+                class="w-6 h-6 opacity-70"
+              />
+            </div>
+            <!-- Header with name, role and avatar -->
+            <div class="flex items-center justify-start mb-4">
+              <div
+                class="w-[50px] h-[50px] rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-semibold text-sm"
+              >
+                <img src="./assets/imgs/avatar.png" alt="avatar" />
+              </div>
+              <div class="text-start mr-3">
+                <h4 class="font-semibold text-[#0d0d0d] text-base">
+                  أحمد خالد
+                </h4>
+                <p class="">سائق شريك</p>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="border-t border-gray-100 mb-4"></div>
+            <!-- Content -->
+            <p class="text-gray-700 text-start leading-relaxed text-sm">
+              يمنحني Toot حرية حقيقية في القيادة. أختار الرحلات التي تناسبني،
+              ونظام التفاوض يجعل كل رحلة عادلة للطرفين.
+            </p>
+          </div>
+
+          <div
+            class="quote bg-[#F9FAFB] p-3 rounded-xl border border-gray-200 shadow-sm relative"
+          >
+            <!-- Quote icon -->
+            <div class="absolute top-5 left-6 text-gray-200">
+              <img
+                src="assets/imgs/icons/qoute.svg"
+                alt="quote"
+                class="w-6 h-6 opacity-70"
+              />
+            </div>
+            <!-- Header with name, role and avatar -->
+            <div class="flex items-center justify-start mb-4">
+              <div
+                class="w-[50px] h-[50px] rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-semibold text-sm"
+              >
+                <img src="./assets/imgs/avatar.png" alt="avatar" />
+              </div>
+              <div class="text-start mr-3">
+                <h4 class="font-semibold text-[#0d0d0d] text-base">محمد علي</h4>
+                <p class="">سائق شريك</p>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="border-t border-gray-100 mb-4"></div>
+            <!-- Content -->
+            <p class="text-gray-700 text-start leading-relaxed text-sm">
+              يمنحني Toot حرية حقيقية في القيادة. أختار الرحلات التي تناسبني،
+              ونظام التفاوض يجعل كل رحلة عادلة للطرفين.
+            </p>
+          </div>
+
+          <div
+            class="quote bg-[#F9FAFB] p-3 rounded-xl border border-gray-200 shadow-sm relative"
+          >
+            <!-- Quote icon -->
+            <div class="absolute top-5 left-6 text-gray-200">
+              <img
+                src="assets/imgs/icons/qoute.svg"
+                alt="quote"
+                class="w-6 h-6 opacity-70"
+              />
+            </div>
+            <!-- Header with name, role and avatar -->
+            <div class="flex items-center justify-start mb-4">
+              <div
+                class="w-[50px] h-[50px] rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-semibold text-sm"
+              >
+                <img src="./assets/imgs/avatar.png" alt="avatar" />
+              </div>
+              <div class="text-start mr-3">
+                <h4 class="font-semibold text-[#0d0d0d] text-base">Mohammad</h4>
+                <p class="">سائق شريك</p>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="border-t border-gray-100 mb-4"></div>
+            <!-- Content -->
+            <p class="text-gray-700 text-start leading-relaxed text-sm">
+              يمنحني Toot حرية حقيقية في القيادة. أختار الرحلات التي تناسبني،
+              ونظام التفاوض يجعل كل رحلة عادلة للطرفين.
+            </p>
+          </div>
+
+          <div
+            class="quote bg-[#F9FAFB] p-3 rounded-xl border border-gray-200 shadow-sm relative"
+          >
+            <!-- Quote icon -->
+            <div class="absolute top-5 left-6 text-gray-200">
+              <img
+                src="assets/imgs/icons/qoute.svg"
+                alt="quote"
+                class="w-6 h-6 opacity-70"
+              />
+            </div>
+            <!-- Header with name, role and avatar -->
+            <div class="flex items-center justify-start mb-4">
+              <div
+                class="w-[50px] h-[50px] rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-semibold text-sm"
+              >
+                <img src="./assets/imgs/avatar.png" alt="avatar" />
+              </div>
+              <div class="text-start mr-3">
+                <h4 class="font-semibold text-[#0d0d0d] text-base">فاطمة</h4>
+                <p class="">سائقة شريك</p>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="border-t border-gray-100 mb-4"></div>
+            <!-- Content -->
+            <p class="text-gray-700 text-start leading-relaxed text-sm">
+              يمنحني Toot حرية حقيقية في القيادة. أختار الرحلات التي تناسبني،
+              ونظام التفاوض يجعل كل رحلة عادلة للطرفين.
+            </p>
+          </div>
+
+          <div
+            class="quote bg-[#F9FAFB] p-3 rounded-xl border border-gray-200 shadow-sm relative"
+          >
+            <!-- Quote icon -->
+            <div class="absolute top-5 left-6 text-gray-200">
+              <img
+                src="assets/imgs/icons/qoute.svg"
+                alt="quote"
+                class="w-6 h-6 opacity-70"
+              />
+            </div>
+            <!-- Header with name, role and avatar -->
+            <div class="flex items-center justify-start mb-4">
+              <div
+                class="w-[50px] h-[50px] rounded-full bg-gray-100 flex items-center justify-center text-gray-600 font-semibold text-sm"
+              >
+                <img src="./assets/imgs/avatar.png" alt="avatar" />
+              </div>
+              <div class="text-start mr-3">
+                <h4 class="font-semibold text-[#0d0d0d] text-base">خالد</h4>
+                <p class="">راكب عائلي</p>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="border-t border-gray-100 mb-4"></div>
+            <!-- Content -->
+            <p class="text-gray-700 text-start leading-relaxed text-sm">
+              يمنحني Toot حرية حقيقية في القيادة. أختار الرحلات التي تناسبني،
+              ونظام التفاوض يجعل كل رحلة عادلة للطرفين.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section
+      id="faq"
+      class="w-full mx-auto px-4 py-20 bg-[#F5F5F5]"
+      data-aos="fade-up"
+    >
+      <div class="text-center mb-12" data-aos="fade-up">
+        <span
+          class="bg-gray-900 text-white px-4 py-2 rounded-full gradient-bg text-sm font-medium inline-flex items-center gap-1"
+        >
+          <img src="./assets/imgs/icons/question.svg" />
+          الأسئلة الشائعة
+        </span>
+        <h2
+          class="mt-4 text-3xl md:text-4xl font-bold text-gray-900"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          كل ما تحتاج معرفته عن TooT
+        </h2>
+      </div>
+      <!-- Dynamic FAQ Container - Items will be distributed into columns -->
+      <div
+        id="faq-container"
+        class="max-w-5xl mx-auto flex md:flex-row flex-col gap-4"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        <!-- FAQ items will be dynamically distributed here -->
+        <div data-reveal class="faq-item">
+          <button
+            class="faq-toggle w-full flex items-center justify-start gap-3 p-6 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+          >
+            <div
+              class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-minus text-white text-sm"></i>
+            </div>
+            <span class="font-semibold text-gray-900 text-right"
+              >كيف يعمل تسعير Toot؟</span
+            >
+          </button>
+          <div class="faq-content p-6 text-gray-600 border-t border-gray-100">
+            <p class="text-right">
+              مع Toot، يمكنك تحديد السعر المناسب لراحتك. يمكن للسائق قبول العرض
+              الذي تقدمه أو إرسال عرض مضاد، مما يمنحك تحكمًا كاملًا وشفافية تامة
+              في التسعير.
+            </p>
+          </div>
+        </div>
+        <div data-reveal class="faq-item">
+          <button
+            class="faq-toggle w-full flex items-center justify-start gap-3 p-6 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+          >
+            <div
+              class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-plus text-white text-sm"></i>
+            </div>
+            <span class="font-semibold text-gray-900 text-right"
+              >ما السرعة اللي يمكنني من خلالها الحصول على سائق؟</span
+            >
+          </button>
+          <div
+            class="faq-content hidden p-6 text-gray-600 border-t border-gray-100"
+          >
+            <p class="text-right">
+              نقبل الدفع نقدًا، وبطاقات الائتمان، وApple Pay، ومدى، ومحافظ
+              الهواتف الذكية.
+            </p>
+          </div>
+        </div>
+        <div data-reveal class="faq-item">
+          <button
+            class="faq-toggle w-full flex items-center justify-start gap-3 p-6 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+          >
+            <div
+              class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-plus text-white text-sm"></i>
+            </div>
+            <span class="font-semibold text-gray-900 text-right"
+              >هل يمكنك التفاوض على الأجرة؟</span
+            >
+          </button>
+          <div
+            class="faq-content hidden p-6 text-gray-600 border-t border-gray-100"
+          >
+            <p class="text-right">
+              نعم! يمكنك جدولة رحلتك حتى 30 يومًا مسبقًا من خلال التطبيق.
+            </p>
+          </div>
+        </div>
+        <div data-reveal class="faq-item">
+          <button
+            class="faq-toggle w-full flex items-center justify-start gap-3 p-6 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+          >
+            <div
+              class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-plus text-white text-sm"></i>
+            </div>
+            <span class="font-semibold text-gray-900 text-right"
+              >هل أحتاج إلى حساب لاستخدام Toot؟</span
+            >
+          </button>
+          <div
+            class="faq-content hidden p-6 text-gray-600 border-t border-gray-100"
+          >
+            <p class="text-right">
+              بعد تأكيد الحجز، يمكنك متابعة السائق على الخريطة في الوقت الفعلي
+              وتلقي تنبيهات بالحالة.
+            </p>
+          </div>
+        </div>
+        <div data-reveal class="faq-item">
+          <button
+            class="faq-toggle w-full flex items-center justify-start gap-3 p-6 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+          >
+            <div
+              class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-plus text-white text-sm"></i>
+            </div>
+            <span class="font-semibold text-gray-900 text-right"
+              >هل Toot آمن للاستخدام؟</span
+            >
+          </button>
+          <div
+            class="faq-content hidden p-6 text-gray-600 border-t border-gray-100"
+          >
+            <p class="text-right">
+              نحن نقدم أسعارًا شفافة بدون رسوم خفية. السعر يظهر قبل تأكيد الحجز.
+            </p>
+          </div>
+        </div>
+        <div data-reveal class="faq-item">
+          <button
+            class="faq-toggle w-full flex items-center justify-start gap-3 p-6 bg-white rounded-xl border border-gray-200 hover:bg-gray-50 transition-colors"
+          >
+            <div
+              class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center flex-shrink-0"
+            >
+              <i class="fas fa-plus text-white text-sm"></i>
+            </div>
+            <span class="font-semibold text-gray-900 text-right"
+              >ما القطاعات اللي تعملون معها؟</span
+            >
+          </button>
+          <div
+            class="faq-content hidden p-6 text-gray-600 border-t border-gray-100"
+          >
+            <p class="text-right">
+              قم بتنزيل تطبيق السائق، أكمل عملية التسجيل، وابدأ بالقيادة والكسب
+              في وقتك الخاص.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="bg-white" data-aos="fade-up">
+      <div
+        class="max-w-7xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center"
+      >
+        <!-- Right side: Phone image in gray container -->
+
+        <div
+          data-reveal
+          class="flex justify-end order-2 md:order-1"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <div
+            class="w-full max-w-lg bg-[#F5F5F5] rounded-2xl p-8 md:px-0 pb-0 flex items-center justify-start"
+          >
+            <img
+              src="./assets/imgs/download/phone.png"
+              alt="TooT App"
+              class="w-full max-w-sm object-contain"
+            />
+          </div>
+        </div>
+        <!-- Left side: Text and buttons -->
+
+        <div
+          data-reveal
+          class="order-1 md:order-2"
+          data-aos="fade-right"
+          data-aos-delay="200"
+        >
+          <h2
+            class="text-3xl md:text-4xl font-bold text-gray-900"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            طريقة أذكى للتنقّل.
+          </h2>
+          <p
+            class="mt-4 text-gray-600 text-lg"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            حدّد أجرة رحلتك، واختر السائق المناسب لك، وتابع مشوارك لحظة بلحظة —
+            بدون مفاجآت، بدون ضغط، فقط رحلات مرنة بالشكل الذي تفضّله.
+          </p>
+          <div
+            class="mt-6 flex flex-wrap gap-3 justify-start"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            <a
+              href="#"
+              class="inline-flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+            >
+              <img
+                src="./assets/imgs/icons/play.svg"
+                alt="Play"
+                class="h-8 w-8"
+              />
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >Google Play</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+            >
+              <img
+                src="./assets/imgs/icons/apple.svg"
+                alt="Apple"
+                class="h-8 w-8"
+              />
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >App Store</span
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#110222] text-[#94949E]" data-aos="fade-up">
+      <div class="max-w-7xl mx-auto px-4 py-16">
+        <!-- Purple Divider Line -->
+        <div
+          class="w-full h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent mb-16"
+          data-aos="fade-up"
+        ></div>
+        <!-- Top Row: Logo/Description and Navigation Links -->
+        <div
+          class="grid md:grid-cols-2 gap-8 mb-8"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <!-- Left Column: Navigation Links (3 in a row) -->
+
+          <!-- Right Column: Logo and Description -->
+          <div
+            class="flex flex-col items-start text-right"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center gap-2 mb-4">
+              <img
+                src="assets/imgs/logo-white.svg"
+                alt="TooT"
+                class="h-8 w-auto"
+              />
+            </div>
+            <p class="text-[#94949E] text-[17px]">
+              يمكنك Toot من تحديد أجرة رحلتك، واختيار السائق المناسب، والاستمتاع
+              بتجربة تَنقُّل مرنة وشفافة مصممة بما يلائم احتياجاتك.
+            </p>
+          </div>
+          <div
+            class="flex items-start justify-between md:justify-end gap-8"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <a
+              href="#"
+              class="text-[#94949E] hover:text-gray-300 transition-colors"
+              >الرئيسية</a
+            >
+            <a
+              href="#"
+              class="text-[#94949E] hover:text-gray-300 transition-colors"
+              >كيف يعمل توت</a
+            >
+            <a
+              href="#faq"
+              class="text-[#94949E] hover:text-gray-300 transition-colors"
+              >الاسئلة الشائعة</a
+            >
+          </div>
+
+          <!-- Social Icons (Center) -->
+          <div class="flex md:hidden gap-3">
+            <a
+              href="#"
+              class="w-10 h-10 footer-social-item rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors"
+            >
+              <i class="fa-brands fa-instagram text-white"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 footer-social-item rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors"
+            >
+              <i class="fa-brands fa-x-twitter text-white"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-10 h-10 footer-social-item rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors"
+            >
+              <i class="fa-brands fa-facebook-f text-white"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 footer-social-item rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors"
+            >
+              <i class="fa-brands fa-linkedin text-white"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bottom Row: Copyright, Social Icons, and Terms -->
+        <div
+          class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-t border-[#FFFFFF1A] pt-8"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <!-- Copyright (Left on desktop, top on mobile) -->
+          <div
+            class="order-2 md:order-3 text-right"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <p class="text-[#94949E] text-sm">
+              جميع الحقوق محفوظة لـ توت 2025 ©
+            </p>
+          </div>
+
+          <!-- Social Icons (Center) -->
+          <div
+            class="hidden md:flex gap-3 order-2"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <a
+              href="#"
+              class="w-10 h-10 footer-social-item rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors"
+            >
+              <i class="fa-brands fa-instagram text-white"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 footer-social-item rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors"
+            >
+              <i class="fa-brands fa-x-twitter text-white"></i>
+            </a>
+
+            <a
+              href="#"
+              class="w-10 h-10 footer-social-item rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors"
+            >
+              <i class="fa-brands fa-facebook-f text-white"></i>
+            </a>
+            <a
+              href="#"
+              class="w-10 h-10 footer-social-item rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors"
+            >
+              <i class="fa-brands fa-linkedin text-white"></i>
+            </a>
+          </div>
+
+          <!-- Terms Link (Right on desktop, bottom on mobile) -->
+          <div
+            class="order-1 md:order-1 text-right"
+            data-aos="fade-up"
+            data-aos-delay="700"
+          >
+            <a
+              href="#"
+              class="text-[#94949E] hover:text-gray-300 transition-colors"
+              >الشروط والاحكام</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

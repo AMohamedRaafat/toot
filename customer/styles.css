@@ -1,0 +1,530 @@
+/* IBM Plex Sans Arabic font already loaded via Google Fonts */
+
+/* Design tokens matching the provided images */
+:root {
+  --purple-600: #7c3aed;
+  --purple-700: #6d28d9;
+  --purple-200: #e9d5ff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --black: #000000;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile Drawer Styles */
+#mobile-drawer {
+  z-index: 50;
+}
+
+#mobile-drawer > div {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+}
+
+#mobile-drawer.translate-x-full {
+  transform: translateX(100%);
+}
+
+#mobile-drawer.translate-x-0 {
+  transform: translateX(0);
+}
+
+#drawer-backdrop {
+  z-index: 40; /* Below drawer content */
+}
+
+/* Drawer header with proper spacing */
+#mobile-drawer .flex.items-center.justify-between {
+  min-height: 4rem; /* Ensure proper header height */
+}
+
+/* Drawer menu with proper spacing */
+#mobile-drawer nav {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#mobile-drawer nav a {
+  font-size: 1.125rem; /* Larger text for mobile */
+  padding: 1rem 1.5rem; /* More comfortable touch targets */
+}
+
+/* Drawer footer positioning */
+#mobile-drawer > div > div.absolute {
+  z-index: 1; /* Ensure footer stays above content */
+  background: white; /* Ensure white background */
+}
+
+/* Close button enhancement */
+#close-drawer {
+  font-size: 1.5rem; /* Larger close icon */
+  padding: 0.75rem; /* Larger touch target */
+}
+
+/* Drawer menu items */
+#mobile-drawer nav a {
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+#mobile-drawer nav a:hover {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+#mobile-drawer nav a.border-b-2 {
+  border-bottom-color: var(--purple-600);
+}
+
+/* Drawer store buttons */
+#mobile-drawer .flex.items-center.gap-3 {
+  transition: all 0.2s ease;
+}
+
+#mobile-drawer .flex.items-center.gap-3:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile menu button */
+#mobile-menu-btn {
+  transition: all 0.2s ease;
+}
+
+#mobile-menu-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Close button */
+#close-drawer {
+  transition: all 0.2s ease;
+}
+
+#close-drawer:hover {
+  transform: rotate(90deg);
+}
+
+/* Prevent body scroll when drawer is open */
+body.drawer-open {
+  overflow: hidden;
+}
+
+/* Ensure drawer works on all mobile sizes */
+@media (max-width: 640px) {
+  #mobile-drawer > div {
+    width: 100vw;
+  }
+}
+
+/* Enhanced drawer animations */
+#mobile-drawer {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+#drawer-backdrop {
+  will-change: opacity;
+  backface-visibility: hidden;
+}
+
+/* Smooth transitions for all drawer elements */
+#mobile-drawer * {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Feature cards */
+.feature-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.feature-card .icon {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background: var(--gray-100);
+  color: var(--purple-600);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.feature-card .title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+.feature-card .desc {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+}
+
+/* Override for existing quote icon divs */
+.absolute.top-5.left-6 img[src*="qoute.svg"] {
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.5;
+  filter: brightness(0.8);
+}
+
+.quote {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+.quote p {
+  font-size: 16px;
+  color: #808080;
+  font-weight: 500;
+  margin-bottom: 0rem;
+}
+.quote .author {
+  display: block;
+  font-weight: 600;
+  color: var(--gray-900);
+  font-size: 0.875rem;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+.faq-toggle {
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: right;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray-900);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s ease;
+}
+.faq-toggle:hover {
+  background: var(--gray-50);
+}
+.faq-toggle i {
+  color: white;
+  font-size: 0.875rem;
+  transition: transform 0.2s ease;
+}
+.faq-toggle.active i {
+  transform: rotate(180deg);
+}
+.faq-content {
+  padding: 0 1.25rem 1rem;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+/* Store badges */
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--black);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.store-btn:hover {
+  background: var(--gray-800);
+}
+
+/* Footer */
+footer a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+footer a:hover {
+  color: var(--white);
+}
+
+/* RTL utilities */
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  .feature-card,
+  .quote {
+    padding: 1.25rem;
+  }
+  .faq-toggle {
+    padding: 0.875rem 1rem;
+    font-size: 0.9375rem;
+  }
+  .faq-content {
+    padding: 0 1rem 0.875rem;
+  }
+  .quote {
+    width: auto !important;
+  }
+}
+
+/* Subtle map background texture */
+.bg-gradient-to-br {
+  position: relative;
+}
+.bg-gradient-to-br::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm-20-16c8.837 0 16 7.163 16 16s-7.163 16-16 16S4 38.837 4 30s7.163-16 16-16z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Animation utilities */
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-100 {
+  opacity: 1;
+}
+.translate-y-6 {
+  transform: translateY(1.5rem);
+}
+.translate-y-0 {
+  transform: translateY(0);
+}
+.transition-all {
+  transition-property: all;
+}
+.duration-700 {
+  transition-duration: 700ms;
+}
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Owl Carousel Custom Styles */
+.reviews-carousel .owl-stage {
+  display: flex;
+  align-items: stretch;
+}
+
+.reviews-carousel .owl-item {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.reviews-carousel .owl-item.active.center {
+  opacity: 1;
+}
+
+/* .reviews-carousel .owl-item.active.center + .owl-item,
+.reviews-carousel .owl-item.active.center .owl-item {
+  opacity: 0.7;
+} */
+
+.reviews-carousel .quote {
+  height: 100%;
+  width: 350px !important;
+}
+
+/* Hide navigation arrows */
+.reviews-carousel .owl-nav {
+  display: none !important;
+}
+
+/* Hide dots */
+.reviews-carousel .owl-dots {
+  display: none !important;
+}
+
+/* RTL support for carousel */
+.reviews-carousel {
+  direction: ltr;
+}
+
+.reviews-carousel .quote {
+  direction: rtl;
+}
+
+.gradient-bg {
+  background: linear-gradient(180deg, #000000 0%, #393657 100%) !important;
+}
+@media (max-width: 767px) {
+  .reviews-carousel .quote {
+    width: 100% !important;
+  }
+}
+
+.footer-social-item {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.04) 100%
+    ),
+    radial-gradient(
+      50% 100% at 50% 0%,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  border: 0.9px solid #ffffff10;
+  border-right: 0 !important;
+  backdrop-filter: blur(22.598642349243164px);
+}
+
+/* Fix AOS animation overflow issues */
+[data-aos] {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure AOS elements are visible when animated */
+.aos-init {
+  opacity: 1;
+  visibility: visible;
+}
+
+.aos-animate {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Prevent horizontal overflow during animations */
+section,
+div,
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Ensure animations don't cause scroll */
+[data-aos^="fade"] {
+  will-change: transform, opacity;
+}
+
+/* Fix for fade-left and fade-right animations */
+[data-aos="fade-left"],
+[data-aos="fade-right"] {
+  overflow: hidden;
+}
+
+/* Fix scrollbar issues - target horizontal scrollbar specifically */
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+/* Fix AOS container issues */
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Prevent horizontal overflow during AOS animations */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+/* Allow AOS animations to work while preventing overflow */
+[data-aos] {
+  max-width: 100% !important;
+}
+
+/* Fix for RTL layout with AOS */
+[dir="rtl"] [data-aos^="fade"][data-aos^="right"] {
+  transform: translateX(-100px);
+}
+
+[dir="rtl"] [data-aos^="fade"][data-aos^="left"] {
+  transform: translateX(100px);
+}
+
+[dir="rtl"] .aos-animate[data-aos^="fade"][data-aos^="right"] {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .aos-animate[data-aos^="fade"][data-aos^="left"] {
+  transform: translateX(0);
+}
+
+/* Fix owl-carousel overflow */
+.owl-carousel {
+  overflow: hidden;
+}
+
+.owl-stage-outer {
+  overflow: hidden;
+}
+
+/* Additional mobile fixes */
+@media (max-width: 767px) {
+  [data-aos] {
+    overflow: hidden;
+  }
+}

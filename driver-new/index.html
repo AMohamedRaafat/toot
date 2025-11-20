@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TooT | كن سائقًا معنا - تحكم في أرباحك ووقتك</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Owl Carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="../customer/assets/favicon.ico" />
+    <meta name="theme-color" content="#fff" />
+  </head>
+  <body class="bg-white text-slate-900 font-['IBM_Plex_Sans_Arabic']">
+    <!-- Header -->
+    <header class="z-50 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <img src="../customer/assets/imgs/logo.svg" alt="TooT" class="h-10 w-auto" />
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#" class="text-sm font-medium text-slate-900">الرئيسية</a>
+          <a href="#about" class="text-sm text-slate-600 hover:text-slate-900">من نحن</a>
+          <a href="#download" class="text-sm text-slate-600 hover:text-slate-900">حمل التطبيق</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-slate-900">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+      <!-- Backdrop -->
+      <div id="drawer-backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+      
+      <!-- Drawer Content -->
+      <div class="fixed left-0 top-0 h-full w-80 bg-white shadow-xl z-50">
+        <div class="flex items-center justify-between p-4 border-b border-slate-200">
+          <div class="flex items-center gap-2">
+            <img src="../customer/assets/imgs/logo.svg" alt="TooT" class="h-10 w-auto" />
+          </div>
+          <button id="close-drawer" class="p-2 text-slate-600 hover:text-slate-900">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+        
+        <nav class="p-4 space-y-2">
+          <a href="#" class="block px-4 py-3 text-sm font-medium text-slate-900 bg-slate-100 rounded-lg">الرئيسية</a>
+          <a href="#about" class="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg">من نحن</a>
+          <a href="#download" class="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg">حمل التطبيق</a>
+        </nav>
+
+        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-200">
+          <div class="flex gap-3">
+            <a href="#" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800">
+              <img src="../customer/assets/imgs/icons/apple.svg" alt="Apple" class="h-4 w-4" />
+              App Store
+            </a>
+            <a href="#" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800">
+              <img src="../customer/assets/imgs/icons/play.svg" alt="Google Play" class="h-4 w-4" />
+              Google Play
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 py-20">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div data-aos="fade-up" data-aos-duration="800">
+            <div class="mb-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+                <i class="fa-solid fa-star text-yellow-500"></i>
+                أعلى أرباح في السوق
+              </div>
+            </div>
+            
+            <h1 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+              تقدم بخطوة إلى الأمام مع
+              <span class="text-purple-600">منصة السائق الأولى</span>
+            </h1>
+            
+            <p class="text-lg text-slate-600 mb-8 max-w-lg">
+              كن سائقًا مع TooT وتحكم في أرباحك ووقتك. اربح أكثر مع أقل عمولة في السوق واستمتع بالمرونة الكاملة.
+            </p>
+
+            <div class="flex flex-wrap gap-4 mb-8">
+              <a href="#download" class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">
+                <i class="fa-solid fa-download"></i>
+                حمل التطبيق الآن
+              </a>
+              <a href="#how-it-works" class="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 transition-colors">
+                <i class="fa-solid fa-play"></i>
+                كيف تعمل
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-purple-600 mb-1">١٢٠ألف</div>
+                <div class="text-sm text-slate-600">ريال أرباح شهريًا</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-emerald-600 mb-1">+٣٠٪</div>
+                <div class="text-sm text-slate-600">زيادة في الأرباح</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-blue-600 mb-1">٢٤/٧</div>
+                <div class="text-sm text-slate-600">دعم فني</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content - Phone Mockup -->
+          <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+            <div class="relative">
+              <!-- Phone Frame -->
+              <div class="bg-slate-900 rounded-3xl p-6 max-w-sm mx-auto shadow-2xl">
+                <!-- Phone Header -->
+                <div class="flex items-center justify-between mb-4">
+                  <div class="text-white text-xs">٩:٤١</div>
+                  <div class="flex gap-1">
+                    <div class="w-1 h-1 bg-white rounded-full opacity-60"></div>
+                    <div class="w-1 h-1 bg-white rounded-full"></div>
+                    <div class="w-1 h-1 bg-white rounded-full opacity-60"></div>
+                  </div>
+                </div>
+
+                <!-- App Content -->
+                <div class="bg-gradient-to-br from-purple-600 to-emerald-600 rounded-2xl p-6 text-white">
+                  <div class="text-center mb-4">
+                    <div class="text-sm opacity-90 mb-2">تم تصميمه لتمكين السائقين</div>
+                    <h3 class="text-lg font-bold mb-4">طريقة جديدة للربح على الطريق</h3>
+                  </div>
+                  
+                  <div class="bg-white/20 backdrop-blur rounded-xl p-4 mb-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-sm">الأرباح هذا الشهر</span>
+                      <i class="fa-solid fa-arrow-trend-up text-emerald-300"></i>
+                    </div>
+                    <div class="text-2xl font-bold">٥٬٨٨٦ ر.س</div>
+                    <div class="text-xs opacity-90 mt-1">+١٢٪ عن الشهر الماضي</div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-white/20 backdrop-blur rounded-lg p-3 text-center">
+                      <div class="text-xs opacity-90">رحلات</div>
+                      <div class="text-lg font-bold">١٢٥</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur rounded-lg p-3 text-center">
+                      <div class="text-xs opacity-90">تقييم</div>
+                      <div class="text-lg font-bold">٤.٩</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Content -->
+          <div data-aos="fade-right" data-aos-duration="800">
+            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              وفر أفضل تجربة ركوب مع
+              <span class="text-purple-600">تفكير يضع السائق أولاً</span>
+            </h2>
+            <p class="text-lg text-slate-600 mb-8">
+              نحن منصة تركز على السائق وملتزمة بمساعدتك في الانضمام، والسلامة، والدعم، والراحة.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 flex-shrink-0">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-900 mb-2">مرونة في الوقت</h3>
+                  <p class="text-slate-600 text-sm">اعمل في أي وقت يناسبك. لا توجد ساعات عمل إجبارية.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 flex-shrink-0">
+                  <i class="fa-solid fa-route"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-900 mb-2">مسارات ذكية</h3>
+                  <p class="text-slate-600 text-sm">احصل على أفضل المسارات مع معرفة حركة المرور في الوقت الفعلي.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 flex-shrink-0">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-900 mb-2">حماية وتأمين</h3>
+                  <p class="text-slate-600 text-sm">تأمين شامل أثناء القيادة مع دعم فني على مدار الساعة.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content - Video Placeholder -->
+          <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+            <div class="relative bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl aspect-video flex items-center justify-center">
+              <div class="text-center">
+                <button class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center text-white hover:bg-purple-700 transition-colors mb-4 mx-auto">
+                  <i class="fa-solid fa-play text-2xl mr-1"></i>
+                </button>
+                <div class="text-slate-600 font-semibold text-lg">كيف نعمل</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Left Column -->
+          <div data-aos="fade-right" data-aos-duration="800">
+            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">
+              أسئلة السائقين الشائعة
+            </h2>
+            <p class="text-lg text-slate-600 mb-8">
+              كمنصة تركز على السائق، نحن ملتزمون بمساعدتك في الانضمام، والسلامة، والدعم، والراحة.
+            </p>
+            <div class="bg-purple-50 rounded-2xl p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-slate-900">هل تحتاج إلى مساعدة؟</h3>
+                  <p class="text-slate-600 text-sm">فريق الدعم لدينا جاهز للمساعدة</p>
+                </div>
+              </div>
+              <a href="#" class="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors">
+                <i class="fa-solid fa-message"></i>
+                تواصل معنا
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column - FAQ Accordion -->
+          <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+            <div class="space-y-4">
+              <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                <button class="faq-toggle w-full flex items-center justify-between p-6 text-right hover:bg-slate-50 transition-colors">
+                  <span class="font-semibold text-slate-900">لماذا القيادة مع منصتنا فرصة جيدة؟</span>
+                  <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                </button>
+                <div class="faq-content hidden p-6 pt-0 text-slate-600">
+                  <p>القيادة مع منصتنا تمنحك التحكم الكامل في أرباحك. يمكنك تحديد جدولك الزمني الخاص، اختيار الرحلات التي تريدها، والاستمتاع بأسعار تنافسية مع تفصيل شفاف. نركز على سلامة السائق ونسمح لك بالتواصل مع الركاب من خلال ملفات شخصية موثوقة ومطابقة ذكية.</p>
+                </div>
+              </div>
+
+              <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                <button class="faq-toggle w-full flex items-center justify-between p-6 text-right hover:bg-slate-50 transition-colors">
+                  <span class="font-semibold text-slate-900">كيف أبدأ في قبول طلبات الرحلات؟</span>
+                  <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                </button>
+                <div class="faq-content hidden p-6 pt-0 text-slate-600">
+                  <p>بمجرد الموافقة على طلبك، قم بتنزيل تطبيق السائق، وقم بتسجيل الدخول، واضغط على "ابدأ القيادة". سيتم إرسال طلبات الرحلات إليك تلقائيًا بناءً على موقعك وتوافرك.</p>
+                </div>
+              </div>
+
+              <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                <button class="faq-toggle w-full flex items-center justify-between p-6 text-right hover:bg-slate-50 transition-colors">
+                  <span class="font-semibold text-slate-900">كيف يتم تحديد الأجرة؟</span>
+                  <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                </button>
+                <div class="faq-content hidden p-6 pt-0 text-slate-600">
+                  <p>يتم حساب الأجرة تلقائيًا بناءً على المسافة والوقت، مع مراعاة حركة المرور والطلب. نحن نقدم أسعارًا تنافسية مع أقل عمولة في السوق.</p>
+                </div>
+              </div>
+
+              <div class="faq-item border border-slate-200 rounded-xl overflow-hidden">
+                <button class="faq-toggle w-full flex items-center justify-between p-6 text-right hover:bg-slate-50 transition-colors">
+                  <span class="font-semibold text-slate-900">كيف أحصل على أرباحي؟</span>
+                  <i class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                </button>
+                <div class="faq-content hidden p-6 pt-0 text-slate-600">
+                  <p>الدفعات تتم أسبوعيًا كل يوم أحد مباشرة إلى حسابك البنكي. يمكنك أيضًا طلب الدفع الفوري مقابل رسوم رمزية.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+            تجارب السائقين وقصص نجاحهم
+          </h2>
+          <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+            اكتشف كيف غيرت TooT حياة سائقينا من خلال المرونة والأرباح الممتازة
+          </p>
+        </div>
+
+        <div class="testimonials-carousel owl-carousel">
+          <div class="testimonial-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">محمد س.</h4>
+                <p class="text-sm text-slate-600">سائق منذ ٢٠٢١</p>
+              </div>
+            </div>
+            <p class="text-slate-700 italic">"المرونة في العمل مع TooT رائعة. أستطيع العمل بعد الدوام الرسمي وفي عطلة نهاية الأسبوع. الأرباح ممتازة والعمولة منخفضة."</p>
+          </div>
+
+          <div class="testimonial-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">أحمد م.</h4>
+                <p class="text-sm text-slate-600">سائق منذ ٢٠٢٠</p>
+              </div>
+            </div>
+            <p class="text-slate-700 italic">"أحببت البساطة في استخدام التطبيق والمسارات الذكية التي توفر الوقت والوقود. أرباحي ازدادت بنسبة ٣٠٪."</p>
+          </div>
+
+          <div class="testimonial-card bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-slate-900">سارة أ.</h4>
+                <p class="text-sm text-slate-600">سائقة منذ ٢٠١٩</p>
+              </div>
+            </div>
+            <p class="text-slate-700 italic">"الدفعات الأسبوعية في وقتها والدعم الفني سريع الاستجابة. أنصح الجميع بالانضمام لTooT."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-purple-600 to-emerald-600 text-white">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <div data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+            جاهز لتبدأ القيادة بطريقتك؟
+          </h2>
+          <p class="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+            أنشئ أرباحك الخاصة واستخدم أدواتنا للمساعدة في زيادة دخلك. حمل تطبيق السائق.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-purple-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <img src="../customer/assets/imgs/icons/apple.svg" alt="Apple" class="h-5 w-5" />
+              App Store
+            </a>
+            <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-purple-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <img src="../customer/assets/imgs/icons/play.svg" alt="Google Play" class="h-5 w-5" />
+              Google Play
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Brand Column -->
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2 mb-4">
+              <img src="../customer/assets/imgs/logo.svg" alt="TooT" class="h-8 w-auto" />
+            </div>
+            <p class="text-slate-400 text-sm mb-6 max-w-md">
+              TooT تمكنك من تحديد أجورك، اختيار رحلاتك، والاستمتاع بتجربة ركوب شفافة ومرنة مبنية حول احتياجاتك.
+            </p>
+            <div class="flex gap-4">
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-slate-700 transition-colors">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Navigation Column -->
+          <div>
+            <h4 class="font-semibold mb-4">التنقل</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#" class="hover:text-white transition-colors">الرئيسية</a></li>
+              <li><a href="#about" class="hover:text-white transition-colors">من نحن</a></li>
+              <li><a href="#download" class="hover:text-white transition-colors">حمل التطبيق</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal Column -->
+          <div>
+            <h4 class="font-semibold mb-4">التراخيص</h4>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li><a href="#" class="hover:text-white transition-colors">شروط الاستخدام</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">سياسة الخصوصية</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">حمل التطبيق</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-slate-400">
+          <p>&copy; ٢٠٢٥ TooT. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

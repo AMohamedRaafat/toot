@@ -1,0 +1,414 @@
+/* IBM Plex Sans Arabic font already loaded via Google Fonts */
+
+/* Design tokens matching the provided images */
+:root {
+  --purple-600: #7c3aed;
+  --purple-700: #6d28d9;
+  --purple-200: #e9d5ff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --black: #000000;
+  --white: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile Drawer Styles */
+#mobile-drawer {
+  z-index: 50;
+}
+
+#mobile-drawer > div {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+}
+
+#drawer-backdrop {
+  z-index: 40; /* Below drawer content */
+}
+
+/* Prevent body scroll when drawer is open */
+body.drawer-open {
+  overflow: hidden;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/* Custom styles for the mobile drawer */
+#mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  z-index: 50;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#mobile-drawer.translate-x-0 {
+  transform: translateX(0);
+}
+
+#mobile-drawer.translate-x-full {
+  transform: translateX(100%);
+}
+
+/* Icon quote styling */
+.icon-qoute {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url('../customer/assets/imgs/icons/qoute.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+}
+
+/* Owl Carousel Custom Styles */
+.reviews-carousel .owl-stage {
+  display: flex;
+  align-items: stretch;
+}
+
+.reviews-carousel .owl-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews-carousel .review-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews-carousel .review-content {
+  flex-grow: 1;
+}
+
+/* RTL fix for Owl Carousel */
+[dir="rtl"] .owl-carousel {
+  direction: ltr;
+}
+
+[dir="rtl"] .owl-carousel .owl-item {
+  direction: rtl;
+}
+
+/* FAQ Dynamic Column Distribution */
+#faq-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.faq-column {
+  flex: 1;
+}
+
+/* Responsive FAQ columns */
+@media (max-width: 768px) {
+  #faq-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Footer social icons hover effects */
+footer a:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+/* Prevent horizontal overflow during AOS animations */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+/* Allow AOS animations to work while preventing overflow */
+[data-aos] {
+  max-width: 100% !important;
+}
+
+/* Fix for RTL layout with AOS */
+[dir="rtl"] [data-aos^="fade"][data-aos^="right"] {
+  transform: translateX(-100px);
+}
+
+[dir="rtl"] [data-aos^="fade"][data-aos^="left"] {
+  transform: translateX(100px);
+}
+
+[dir="rtl"] .aos-animate[data-aos^="fade"][data-aos^="right"] {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .aos-animate[data-aos^="fade"][data-aos^="left"] {
+  transform: translateX(0);
+}
+
+/* Fix owl-carousel overflow */
+.reviews-carousel {
+  overflow: hidden;
+}
+
+/* Scroll reveal animation for data-reveal elements */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Feature Cards */
+.feature-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--emerald-200);
+}
+
+.feature-card .icon {
+  width: 3rem;
+  height: 3rem;
+  background: var(--emerald-50);
+  color: var(--emerald-600);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card .title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.feature-card .desc {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Steps */
+.step {
+  text-align: center;
+}
+
+.step .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--emerald-600);
+  color: white;
+  border-radius: 9999px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.step .step-title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.step .step-desc {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Quotes */
+.quote {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.quote::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  color: var(--emerald-300);
+  font-weight: bold;
+}
+
+.quote p {
+  color: #374151;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.quote .author {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* FAQ */
+.faq-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.faq-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: right;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.faq-toggle:hover {
+  background: #f9fafb;
+}
+
+.faq-content {
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.faq-content p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* RTL Specific Adjustments */
+.faq-toggle {
+  text-align: right;
+}
+
+.faq-toggle i {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Smooth transitions for interactive elements */
+.feature-card,
+.step,
+.quote,
+.faq-item {
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.feature-card:hover .icon {
+  background: var(--emerald-100);
+  color: var(--emerald-700);
+  transform: scale(1.05);
+}
+
+.step:hover .badge {
+  background: var(--emerald-700);
+  transform: scale(1.1);
+}
+
+/* Focus styles for accessibility */
+.faq-toggle:focus,
+button:focus {
+  outline: 2px solid var(--emerald-500);
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--emerald-200);
+  border-top: 2px solid var(--emerald-600);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
