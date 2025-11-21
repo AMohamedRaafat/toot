@@ -481,3 +481,15 @@ body {
     overflow: hidden;
   }
 }
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.animate-float {
+  animation: floatY 3s ease-in-out infinite;
+}
+.animate-float-delay {
+  animation: floatY 3.6s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
