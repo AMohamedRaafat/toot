@@ -25,6 +25,68 @@
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
 }
+body {
+  background-image: url("./assets/imgs/header/bg-noise.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Simple carousel fix - ensure proper display */
+.reviews-carousel {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  min-height: 200px; /* Ensure container has height */
+}
+
+.reviews-carousel.owl-loaded {
+  display: block !important;
+}
+
+.reviews-carousel .owl-stage {
+  display: flex !important;
+}
+
+.reviews-carousel .owl-item {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure dots are visible */
+.reviews-carousel .owl-dots {
+  display: block !important;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.reviews-carousel .owl-dot {
+  display: inline-block !important;
+  margin: 0 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.reviews-carousel .owl-dot.active {
+  background: #7c3aed;
+}
+
+/* Pre-initialization visibility */
+.reviews-carousel:not(.owl-loaded) {
+  display: flex !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.reviews-carousel:not(.owl-loaded) > div {
+  flex: 0 0 auto !important;
+  scroll-snap-align: start !important;
+  width: 300px !important;
+  margin-left: 20px !important;
+}
 
 /* Base */
 html {
@@ -271,17 +333,13 @@ section[data-aos] .reviews-carousel {
 }
 
 .reviews-carousel.owl-carousel .owl-stage-outer {
-  overflow: hidden !important;
+  overflow: visible !important;
   position: relative !important;
   width: 100% !important;
 }
 
 .reviews-carousel.owl-carousel .owl-stage {
-  display: flex !important;
-  flex-direction: row !important;
   position: relative !important;
-  width: 100% !important;
-  transform: translate3d(0, 0, 0) !important;
   -ms-touch-action: pan-Y !important;
   touch-action: pan-Y !important;
 }
@@ -322,15 +380,12 @@ section[data-aos] .reviews-carousel {
 }
 
 .reviews-carousel .owl-stage-outer {
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
 /* Force horizontal layout with important flags */
 .reviews-carousel .owl-stage {
-  display: flex !important;
-  flex-direction: row !important;
-  white-space: nowrap !important;
-  transform: translate3d(0, 0, 0) !important;
+  position: relative !important;
 }
 
 .reviews-carousel .owl-item {
@@ -371,7 +426,7 @@ section[data-aos] .reviews-carousel {
 @media (max-width: 767px) {
   .reviews-carousel .quote {
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: none !important;
     margin: 0 auto !important;
   }
 
@@ -674,9 +729,6 @@ button:focus {
 
 .reviews-carousel .quote:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  border-color: #cbd5e1;
 }
 
 /* Star rating animation */
@@ -719,7 +771,7 @@ button:focus {
   }
 
   .reviews-carousel .quote {
-    max-width: 320px;
+    max-width: none;
     margin: 0 auto;
   }
 }
@@ -762,4 +814,167 @@ button:focus {
 
 .reviews-carousel .owl-item:last-child {
   margin-right: 0 !important;
+}
+
+/* Owl Carousel Override - Fixes conflicts with existing styles */
+
+/* Force Owl Carousel default behavior */
+.owl-carousel.reviews-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.owl-carousel.reviews-carousel.owl-loaded {
+  display: block;
+}
+
+.owl-carousel.reviews-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+.owl-carousel.reviews-carousel .owl-stage {
+  position: relative;
+  -ms-touch-action: pan-Y;
+  touch-action: manipulation;
+  -moz-backface-visibility: hidden;
+}
+
+.owl-carousel.reviews-carousel .owl-stage:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.owl-carousel.reviews-carousel .owl-item {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.owl-carousel.reviews-carousel.owl-text-select-on .owl-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.owl-carousel.reviews-carousel .owl-nav.disabled,
+.owl-carousel.reviews-carousel .owl-dots.disabled {
+  display: none;
+}
+
+.owl-carousel.reviews-carousel .owl-nav .owl-prev,
+.owl-carousel.reviews-carousel .owl-nav .owl-next,
+.owl-carousel.reviews-carousel .owl-dot {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.owl-carousel.reviews-carousel.owl-loaded {
+  display: block;
+}
+
+.owl-carousel.reviews-carousel.owl-loading {
+  opacity: 0;
+  display: block;
+}
+
+.owl-carousel.reviews-carousel.owl-hidden {
+  opacity: 0;
+}
+
+.owl-carousel.reviews-carousel.owl-refresh .owl-item {
+  visibility: hidden;
+}
+
+.owl-carousel.reviews-carousel.owl-drag .owl-item {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.owl-carousel.reviews-carousel.owl-grab {
+  cursor: move;
+  cursor: grab;
+}
+
+.owl-carousel.reviews-carousel.owl-rtl {
+  direction: rtl;
+}
+
+.owl-carousel.reviews-carousel.owl-rtl .owl-item {
+  float: right;
+}
+
+/* Ensure dots work properly */
+.owl-carousel.reviews-carousel .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.owl-carousel.reviews-carousel .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1;
+  display: inline;
+}
+
+.owl-carousel.reviews-carousel .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background: #d6d6d6;
+  display: block;
+  -webkit-backface-visibility: visible;
+  transition: opacity 200ms ease;
+  border-radius: 30px;
+}
+
+.owl-carousel.reviews-carousel .owl-dots .owl-dot.active span,
+.owl-carousel.reviews-carousel .owl-dots .owl-dot:hover span {
+  background: #7c3aed;
+}
+
+/* Ensure proper item display */
+.owl-carousel.reviews-carousel .owl-item {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.border-curve {
+  border-top-right-radius: 100% !important;
+  height: 275px !important;
+  width: 303xp !important;
+  background-image: url("./assets/imgs/header/img-header.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.icon-riyal {
+  display: inline-block;
+  -webkit-mask-image: url("./assets/imgs/icons/riyal.svg");
+  mask-image: url("./assets/imgs/icons/riyal.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  background-color: currentColor; /* icon color follows text color */
+  mask-size: contain;
 }

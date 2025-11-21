@@ -38,9 +38,9 @@
     />
     <meta name="theme-color" content="#fff" />
   </head>
-  <body class="bg-white text-slate-900 font-['IBM_Plex_Sans_Arabic']">
+  <body class="text-slate-900 font-['IBM_Plex_Sans_Arabic']">
     <!-- Header -->
-    <header class="z-50 bg-white">
+    <header class="z-50">
       <div
         class="max-w-5xl mx-auto px-4 py-3 md:rounded-full flex items-center justify-between"
       >
@@ -124,19 +124,14 @@
             >الرئيسية</a
           >
           <a
-            href="#benefits"
+            href="#download"
             class="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full"
-            >المزايا</a
+            >حمل التطبيق</a
           >
           <a
-            href="#requirements"
+            href="#"
             class="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full"
-            >المتطلبات</a
-          >
-          <a
-            href="#testimonials"
-            class="block px-4 py-3 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full"
-            >قصص النجاح</a
+            >من نحن</a
           >
         </nav>
 
@@ -144,28 +139,39 @@
         <div
           class="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-200"
         >
-          <div class="flex gap-3">
+          <!-- Store Buttons in One Row -->
+          <div class="flex gap-3 mb-6">
             <a
               href="#"
-              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800"
+              class="flex-1 flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
             >
               <img
-                src="../customer/assets/imgs/icons/apple.svg"
-                alt="Apple"
-                class="h-4 w-4"
+                src="./assets/imgs/icons/play.svg"
+                alt="Play"
+                class="h-8 w-8"
               />
-              App Store
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >Google Play</span
+                >
+              </div>
             </a>
             <a
               href="#"
-              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800"
+              class="flex-1 flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
             >
               <img
-                src="../customer/assets/imgs/icons/play.svg"
-                alt="Google Play"
-                class="h-4 w-4"
+                src="./assets/imgs/icons/apple.svg"
+                alt="Apple"
+                class="h-8 w-8"
               />
-              Google Play
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >App Store</span
+                >
+              </div>
             </a>
           </div>
         </div>
@@ -173,92 +179,99 @@
     </div>
 
     <!-- Hero -->
-    <section class="relative bg-[#F6F7F9]">
+    <section class="relative">
       <div
         class="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center"
       >
-        <div data-aos="fade-up" data-aos-duration="800" class="space-y-6">
+        <div data-aos="fade-up" class="space-y-6">
           <h1
-            class="text-4xl md:text-6xl font-bold text-slate-900 leading-tight"
+            class="text-[30px] md:text-[50px] font-bold text-slate-900 leading-tight"
           >
-            تقدّم دائمًا مع منصتنا
-            <span class="text-emerald-600">المُصمّمة للسائق أولًا</span>
+            كن متقدمًا على الطريق مع منصتنا التي تضع السائق في المقام الأول
           </h1>
-          <p class="text-slate-600 text-lg md:text-xl max-w-xl">
-            اكسب أكثر مع تسعير رحلات مرن عبر المدن المختلفة. تحكّم في وقتك
-            وأرباحك بسهولة.
+          <p class="text-slate-600 text-[16px] max-w-xl">
+            كن متقدمًا على الطريق مع منصتنا التي تضع السائق في المقام الأول
           </p>
-          <div class="flex flex-wrap gap-3">
+          <div class="flex gap-3 mb-6">
             <a
               href="#"
-              class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+              class="flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
             >
               <img
-                src="../customer/assets/imgs/icons/apple.svg"
-                alt="Apple"
-                class="h-5 w-5"
+                src="./assets/imgs/icons/play.svg"
+                alt="Play"
+                class="h-8 w-8"
               />
-              <div class="text-left">
-                <div class="text-xs opacity-80">متوفر على</div>
-                <div class="text-sm font-semibold">App Store</div>
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >Google Play</span
+                >
               </div>
             </a>
             <a
               href="#"
-              class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+              class="flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
             >
               <img
-                src="../customer/assets/imgs/icons/play.svg"
-                alt="Google Play"
-                class="h-5 w-5"
+                src="./assets/imgs/icons/apple.svg"
+                alt="Apple"
+                class="h-8 w-8"
               />
-              <div class="text-left">
-                <div class="text-xs opacity-80">متوفر على</div>
-                <div class="text-sm font-semibold">Google Play</div>
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >App Store</span
+                >
               </div>
             </a>
           </div>
         </div>
-        <div class="space-y-6">
-          <div data-aos="fade-left" data-aos-duration="800" class="relative">
-            <img
-              src="./assets/imgs/header/bg-noise.png"
-              alt="Driver"
-              class="w-full rounded-2xl object-cover shadow-md"
-            />
-            <div
-              class="absolute -top-6 -left-6 w-16 h-16 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-lg"
-            >
-              <i class="fa-solid fa-arrow-trend-up"></i>
-            </div>
-            <div
-              class="absolute top-6 left-6 bg-white rounded-2xl p-4 shadow-md border border-slate-200 w-40"
-            >
-              <div class="text-2xl font-bold text-slate-900">١٢٠ك</div>
-              <div class="text-xs text-slate-600 mt-1">
-                أرباح أكثر مع تسعير مرن
+        <div class="space-y-6 hidden md:block">
+          <div data-aos="fade-left" class="">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="relative bg-white rounded-2xl border-curve">
+                <img
+                  src="./assets/imgs/header/arrow-up-icon.svg"
+                  class="absolute rotate-x-[180deg] -top-10 left-0 w-50 h-40 rounded-full text-white flex items-center justify-center"
+                />
               </div>
-              <div class="mt-3 h-2 bg-slate-200 rounded-full overflow-hidden">
-                <div class="h-2 w-1/2 bg-purple-600 rounded-full"></div>
+              <div
+                class="bg-[#F0F0F0] p-6 rounded-xl flex flex-col justify-between items-start"
+              >
+                <div class="flex gap-3 items-center">
+                  <img
+                    src="./assets/imgs/header/trusted.png"
+                    class="w-16 h-16"
+                  />
+                  <span class="font-bold text-[45px]">120K</span>
+                </div>
+                <p class="text-[16px] text-[#5C5D5F] font-medium">
+                  اكسب المزيد من الدخل مع أسعار سفر متعددة في مختلف المدن.
+                </p>
+                <div class="w-full bg-[#D9D9D9] h-2">
+                  <div class="bg-[#8A5CFF] h-2" style="width: 70%"></div>
+                </div>
               </div>
             </div>
           </div>
           <div
             data-aos="fade-left"
             data-aos-duration="800"
-            class="bg-slate-900 rounded-2xl p-6 text-white shadow-lg"
+            class="bg-[url('./assets/imgs/header/img-card.jpg')] bg-cover bg-center rounded-2xl p-6 text-white shadow-lg"
           >
-            <div class="text-center text-xs opacity-70">
-              منصة تُمكّن السائقين — لا تُقيّدهم
+            <div class="flex items-center gap-3 text-[14px]">
+              <span class="h-px w-16 bg-white"></span>
+              <span>منصة تُمكّن السائقين — لا تُقيّدهم</span>
             </div>
-            <div class="mt-4 grid grid-cols-3 gap-4 items-center">
-              <div class="col-span-2">
+            <div class="mt-4 flex justify-between gap-2 items-center">
+              <div class="flex-1">
                 <div class="text-2xl md:text-3xl font-bold">
                   طريقة جديدة لكسب الدخل على الطريق
                 </div>
               </div>
-              <div class="col-span-1">
-                <div class="bg-slate-800 rounded-xl p-4">
+              <div class="w-[35%]">
+                <div class="bg-[#0D1321] rounded-xl p-4">
                   <div class="flex items-center justify-between mb-2">
                     <div class="inline-flex items-center gap-2 text-sm">
                       <span
@@ -271,7 +284,10 @@
                     <span class="text-xs opacity-70">٥٫٠</span>
                   </div>
                   <div class="text-xs opacity-70">أرباح اليوم</div>
-                  <div class="text-2xl font-bold">٥٬٨٨٦٫٣٢ ر.س</div>
+                  <div class="text-2xl font-bold">
+                    5,886,32
+                    <img src="./assets/imgs/icons/riyal.svg" alt="Riyal" class="inline-block align-middle w-6 h-6" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -385,7 +401,7 @@
     <!-- Driver Experiences & Success Stories - Carousel -->
 
     <!-- FAQ - two column layout like the shared UI -->
-    <section id="faq" class="bg-[#F2F3F5]">
+    <section id="faq" class="bg-[#f3f3f3]">
       <div class="max-w-7xl mx-auto px-4 py-20">
         <div class="bg-white/60 rounded-3xl p-8 md:p-12">
           <div class="grid md:grid-cols-2 gap-10">
@@ -479,22 +495,14 @@
       </div>
     </section>
     <!-- Driver Experiences & Success Stories - Carousel -->
-    <section id="stories" class="w-full mx-auto px-4 py-20 bg-[#F6F7F9]">
+    <section id="stories" class="w-full mx-auto px-4 py-20">
       <div class="max-w-7xl mx-auto">
-        <div class="mb-12 text-center" data-aos="fade-up">
+        <div class="mb-12 text-start" data-aos="fade-up">
           <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             تجارب السائقين وقصص النجاح
           </h2>
-          <p class="text-slate-600 text-lg max-w-2xl mx-auto">
-            استمع إلى قصص نجاح سائقينا وانضم إلى آلاف السائقين الذين يحققون
-            أرباحًا أفضل مع TooT
-          </p>
         </div>
-        <div
-          class="owl-carousel owl-theme reviews-carousel"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
+        <div class="owl-carousel owl-theme reviews-carousel">
           <!-- Card 1 - Simplified like customer version -->
           <div
             class="quote bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative"
@@ -670,7 +678,7 @@
     <section id="join" class="bg-white">
       <div class="max-w-7xl mx-auto px-4 py-16">
         <div
-          class="rounded-3xl bg-gradient-to-r from-purple-600 via-fuchsia-500 to-purple-600 text-white p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8"
+          class="rounded-3xl bg-[url('./assets/imgs/footer/bg-join.png')] bg-no-repeat bg-cover md:h-[235px] text-white py-12 px-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8"
           data-aos="fade-up"
         >
           <div class="text-right">
@@ -682,33 +690,37 @@
               الآن.
             </p>
           </div>
-          <div class="flex flex-wrap gap-3">
+          <div class="flex gap-3 mb-6">
             <a
               href="#"
-              class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+              class="flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
             >
               <img
-                src="../customer/assets/imgs/icons/apple.svg"
-                alt="Apple"
-                class="h-5 w-5"
+                src="./assets/imgs/icons/play.svg"
+                alt="Play"
+                class="h-8 w-8"
               />
-              <div class="text-left">
-                <div class="text-[10px] opacity-80">متوفر على</div>
-                <div class="text-sm font-semibold">App Store</div>
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >Google Play</span
+                >
               </div>
             </a>
             <a
               href="#"
-              class="inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
+              class="flex items-center gap-3 px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800"
             >
               <img
-                src="../customer/assets/imgs/icons/play.svg"
-                alt="Google Play"
-                class="h-5 w-5"
+                src="./assets/imgs/icons/apple.svg"
+                alt="Apple"
+                class="h-8 w-8"
               />
-              <div class="text-left">
-                <div class="text-[10px] opacity-80">متوفر على</div>
-                <div class="text-sm font-semibold">Google Play</div>
+              <div class="flex flex-col text-start">
+                <span class="md:text-[12px] text-[10px]">حمل التطبيق</span>
+                <span class="md:text-[12px] text-[10px] font-medium"
+                  >App Store</span
+                >
               </div>
             </a>
           </div>
