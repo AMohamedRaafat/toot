@@ -25,12 +25,7 @@
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
 }
-body {
-  background-image: url("./assets/imgs/header/bg-noise.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
 /* Simple carousel fix - ensure proper display */
 .reviews-carousel {
   display: block !important;
@@ -330,6 +325,9 @@ section[data-aos] .reviews-carousel {
   display: block !important;
   position: relative !important;
   width: 100% !important;
+  @media (min-width: 768px) {
+    overflow: hidden;
+  }
 }
 
 .reviews-carousel.owl-carousel .owl-stage-outer {
@@ -538,10 +536,7 @@ section[data-aos] .reviews-carousel {
 
 /* FAQ */
 .faq-item {
-  border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
-  overflow: hidden;
-  background: #fff;
+  border-bottom: 2px solid #000;
 }
 
 .faq-toggle {
@@ -558,7 +553,6 @@ section[data-aos] .reviews-carousel {
 }
 
 .faq-content {
-  border-top: 1px solid #e5e7eb;
   background: #f9fafb;
 }
 
@@ -766,8 +760,14 @@ button:focus {
 
 /* Responsive carousel adjustments */
 @media (max-width: 640px) {
-  .reviews-carousel .owl-stage {
-    padding: 0 20px;
+  .owl-carousel.reviews-carousel .owl-stage {
+    display: flex !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+  }
+
+  .owl-carousel.reviews-carousel .owl-stage-outer {
+    overflow: hidden !important;
   }
 
   .reviews-carousel .quote {
@@ -784,7 +784,7 @@ button:focus {
 
 /* Mobile: 1 item */
 @media (max-width: 640px) {
-  .reviews-carousel .owl-item {
+  .owl-carousel.reviews-carousel .owl-item {
     width: 100% !important;
     margin-right: 0 !important;
   }

@@ -6,26 +6,29 @@ $(function () {
   $('.reviews-carousel').owlCarousel({
     loop: true,
     margin: 20,
-    nav: false, // Hide navigation arrows
-    dots: false, // Hide dots
-    rtl: true, // RTL support for Arabic
+    nav: false,
+    dots: false,
+    rtl: true,
     responsive: {
       0: {
         items: 1,
         center: true,
+        margin: 0,
+        stagePadding: 0
       },
       640: {
         items: 2,
         center: false,
+        margin: 20,
         stagePadding: 0
       },
       1024: {
-        items: 3.5,
-        center: true,
+        items: 3,
+        center: false,
+        margin: 20
       }
     },
-    center: true,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 4000,
     autoplayHoverPause: true,
     smartSpeed: 800
@@ -63,16 +66,14 @@ $(function () {
   });
 
   // Initialize AOS (Animate On Scroll) - DELAYED to avoid carousel conflicts
-  setTimeout(function () {
-    AOS.init({
-      duration: 800,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 100,
-      // Disable AOS on carousel items to prevent conflicts
-      disable: '.reviews-carousel, .reviews-carousel *'
-    });
-  }, 2000); // Delay AOS initialization until after carousel is set up
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 100,
+    // Disable AOS on carousel items to prevent conflicts
+    disable: '.reviews-carousel, .reviews-carousel *'
+  });
 
   // FAQ accordion
   $('.faq-toggle').on('click', function () {
@@ -169,6 +170,32 @@ $(function () {
       $('html, body').animate({ scrollTop: $target.offset().top - 80 }, 600);
     }
   });
+
+  const $howPlay = $('#how-play');
+  const $howVideo = $('#how-video');
+  const $howPlaceholder = $('#how-placeholder');
+  if ($howPlay.length && $howVideo.length && $howPlaceholder.length) {
+    $howPlay.on('click', function () {
+      const $icon = $howPlay.find('i');
+      const videoEl = $howVideo.get(0);
+      if ($icon.hasClass('fa-play')) {
+        $icon.removeClass('fa-play').addClass('fa-pause');
+        $howPlaceholder.addClass('hidden');
+        $howVideo.removeClass('hidden');
+        try { videoEl.play(); } catch (e) { }
+      } else {
+        $icon.removeClass('fa-pause').addClass('fa-play');
+        try { videoEl.pause(); } catch (e) { }
+        $howVideo.addClass('hidden');
+        $howPlaceholder.removeClass('hidden');
+      }
+    });
+    $howVideo.on('ended', function () {
+      $howPlay.find('i').removeClass('fa-pause').addClass('fa-play');
+      $howVideo.addClass('hidden');
+      $howPlaceholder.removeClass('hidden');
+    });
+  }
 
   console.log('🚗 TooT Driver app initialized successfully!');
 });
