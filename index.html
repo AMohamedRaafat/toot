@@ -7,43 +7,114 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/x-icon" href="./driver/assets/favicon.ico" />
     <style>
-      @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-      @keyframes logoFloat {
-        0% { transform: translateY(0) scale(1) rotate(0deg); }
-        30% { transform: translateY(-6px) scale(1.02) rotate(-1deg); }
-        50% { transform: translateY(0) scale(1) rotate(0deg); }
-        70% { transform: translateY(-4px) scale(1.015) rotate(1deg); }
-        100% { transform: translateY(0) scale(1) rotate(0deg); }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
-      .animate-fade-up { animation: fadeUp 0.8s ease-out both; }
-      .animate-logo { animation: logoFloat 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; will-change: transform; }
-      .animate-fade-up-delay { animation: fadeUp 0.9s ease-out both; animation-delay: 0.15s; }
-      .animate-fade-up-delay-2 { animation: fadeUp 1s ease-out both; animation-delay: 0.3s; }
+      @keyframes logoFloat {
+        0% {
+          transform: translateY(0) scale(1) rotate(0deg);
+        }
+        30% {
+          transform: translateY(-6px) scale(1.02) rotate(-1deg);
+        }
+        50% {
+          transform: translateY(0) scale(1) rotate(0deg);
+        }
+        70% {
+          transform: translateY(-4px) scale(1.015) rotate(1deg);
+        }
+        100% {
+          transform: translateY(0) scale(1) rotate(0deg);
+        }
+      }
+      .animate-fade-up {
+        animation: fadeUp 0.8s ease-out both;
+      }
+      .animate-logo {
+        animation: logoFloat 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        will-change: transform;
+      }
+      .animate-fade-up-delay {
+        animation: fadeUp 0.9s ease-out both;
+        animation-delay: 0.15s;
+      }
+      .animate-fade-up-delay-2 {
+        animation: fadeUp 1s ease-out both;
+        animation-delay: 0.3s;
+      }
     </style>
   </head>
-  <body class="min-h-screen bg-[#F6F7F9] text-[#010205] font-['IBM_Plex_Sans_Arabic']">
+  <body
+    class="min-h-screen bg-[#F6F7F9] text-[#010205] font-['IBM_Plex_Sans_Arabic']"
+  >
     <div class="max-w-5xl mx-auto px-4 py-16">
       <div class="flex items-center justify-center mb-8 animate-fade-up">
-        <img src="./driver/assets/imgs/logo.svg" alt="TooT" class="h-12 w-auto animate-logo" />
+        <img
+          src="./driver/assets/imgs/logo.svg"
+          alt="TooT"
+          class="h-12 w-auto animate-logo"
+        />
       </div>
-      <h1 class="text-2xl md:text-3xl font-bold text-center mb-10">اختر البوابة</h1>
+      <h1 class="text-2xl md:text-3xl font-bold text-center mb-10">
+        اختر البوابة
+      </h1>
       <div class="grid sm:grid-cols-2 gap-6">
-        <a href="./driver/index.html" class="block rounded-2xl bg-white border border-slate-200 shadow-sm p-6 hover:shadow-md transition animate-fade-up">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xl font-semibold">السائق</span>
-            <span class="text-sm text-slate-500">Driver</span>
+        <a
+          href="./driver/index.html"
+          class="block rounded-2xl bg-white border border-slate-200 shadow-sm p-4 hover:shadow-md transition animate-fade-up"
+        >
+          <div class="flex gap-4 items-center">
+            <div class="rounded-full">
+              <img
+                src="./assets/driver.png"
+                class="w-16 h-16 rounded-full object-full"
+              />
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xl font-semibold">السائق</span>
+                <span class="text-sm text-slate-500">Driver</span>
+              </div>
+              <p class="text-slate-600 text-sm">
+                انتقل إلى صفحة السائق لعرض المزايا والمتطلبات.
+              </p>
+            </div>
           </div>
-          <p class="text-slate-600 text-sm">انتقل إلى صفحة السائق لعرض المزايا والمتطلبات.</p>
         </a>
-        <a href="./customer/index.html" class="block rounded-2xl bg-white border border-slate-200 shadow-sm p-6 hover:shadow-md transition animate-fade-up-delay-2">
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xl font-semibold">العميل</span>
-            <span class="text-sm text-slate-500">Customer</span>
+        <a
+          href="./customer/index.html"
+          class="block rounded-2xl bg-white border border-slate-200 shadow-sm p-4 hover:shadow-md transition animate-fade-up-delay-2"
+        >
+          <div class="flex gap-4 items-center">
+            <div class="rounded-full">
+              <img
+                src="./assets/customer.png"
+                class="w-16 h-16 rounded-full object-full"
+              />
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xl font-semibold">العميل</span>
+                <span class="text-sm text-slate-500">Customer</span>
+              </div>
+              <p class="text-slate-600 text-sm">
+                انتقل إلى صفحة العميل لاكتشاف طريقة الطلب والتسعير.
+              </p>
+            </div>
           </div>
-          <p class="text-slate-600 text-sm">انتقل إلى صفحة العميل لاكتشاف طريقة الطلب والتسعير.</p>
         </a>
       </div>
     </div>
